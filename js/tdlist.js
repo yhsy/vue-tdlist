@@ -35,6 +35,20 @@ new Vue({
                 alert("请输入任务内容!");
             }
             
+        },
+        // 需求4:删除任务
+        delTodo:function(item){
+            // console.log(item);
+            /*
+                删除原理
+                1.点击删除按钮,提交当前这条数据
+                2.函数接收这条数据,找出这条数据在数组里的索引
+                3.通过索引,在数组里去掉当前这条数据
+            */
+            // indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。
+            var index = this.tdlist.indexOf(item);
+            // splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。
+            this.tdlist.splice(index,1);
         }
     }
 })

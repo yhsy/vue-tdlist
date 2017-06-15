@@ -37,9 +37,9 @@
                     <div class="view">
                         <input class="toggle" type="checkbox" v-model="item.isChecked" />
                         <label>{{ item.title }}</label>
-                        <button class="destroy"></button>
+                        <button class="destroy" v-on:click="delTodo(item)"></button>
                     </div>
-                    <input class="edit" type="text" />
+                    <input class="edit" type="text"/>
                 </li>
             </ul>
         </div>
