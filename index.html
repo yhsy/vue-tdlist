@@ -21,7 +21,7 @@
             v-on:keyup.enter="addTodo"
             v-model="todo"
         />
-        <ul class="task-count">
+        <ul class="task-count" v-show="tdlist.length">
             <li>1个任务未完成</li>
             <li class="action">
                 <a class="active" href="#">所有任务</a>
@@ -31,7 +31,7 @@
         </ul>
         <h3 class="big-title">任务列表：</h3>
         <div class="tasks">
-            <span class="no-task-tip">还没有添加任何任务</span>
+            <span class="no-task-tip" v-show="!tdlist.length">还没有添加任何任务</span>
             <ul class="todo-list">
                 <li class="todo" v-for="item in tdlist">
                     <div class="view">
