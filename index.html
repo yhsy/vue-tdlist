@@ -33,9 +33,9 @@
         <div class="tasks">
             <span class="no-task-tip" v-show="!tdlist.length">还没有添加任何任务</span>
             <ul class="todo-list">
-                <li class="todo" v-for="item in tdlist">
+                <li class="todo" v-for="item in tdlist" v-bind:class="{completed:item.isChecked}">
                     <div class="view">
-                        <input class="toggle" type="checkbox" />
+                        <input class="toggle" type="checkbox" v-model="item.isChecked" />
                         <label>{{ item.title }}</label>
                         <button class="destroy"></button>
                     </div>

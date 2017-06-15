@@ -1,12 +1,14 @@
 // 1.模拟数据(把静态的任务列表数据,替换成模拟的数据)
 // 任务是多条的,所以要数组,一条任务包含很多信息,所以要用对象,一个对象有多个元素
 var list = [
-   /* {
-        title:"吃饭睡觉打豆豆"
+    {
+        title:"吃饭睡觉打豆豆",
+        isChecked:false,
     },
     {
-        title:"学习Vue.js"
-    }*/
+        title:"学习Vue.js",
+        isChecked:true,
+    }
 ]
 
 // 2.实例化
@@ -24,7 +26,8 @@ new Vue({
         addTodo:function(ev){
             if(this.todo){
                 this.tdlist.push({
-                    title:this.todo
+                    title:this.todo,
+                    isChecked:false
                 })
                 // 添加完成,让输入框里的内容重置为空
                 this.todo = "";
